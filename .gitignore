@@ -1,0 +1,4 @@
+*.o
+*.exe
+t_rbtree
+*.sh

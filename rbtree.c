@@ -28,7 +28,7 @@ struct rb_node *rb_successor(struct rb_node *node, struct rb_node *sentinel)
 	while (node->parent != sentinel && node == node->parent->right)
 		node = node->parent;
 
-	return node;
+	return node->parent;
 }
 
 struct rb_node *rb_predecessor(struct rb_node *node, struct rb_node *sentinel)
@@ -43,7 +43,7 @@ struct rb_node *rb_predecessor(struct rb_node *node, struct rb_node *sentinel)
 	while (node->parent != sentinel && node == node->parent->left)
 		node = node->parent;
 
-	return node;
+	return node->parent;
 }
 
 static void rb_left_rotate(struct rb_tree *tree, struct rb_node *node)
@@ -270,4 +270,33 @@ void rb_delete(struct rb_tree *tree, struct rb_node *node)
 		}
 	}
 	x->color = RB_BLACK;
+}
+
+struct rb_node *rb_first(struct rb_tree *tree)
+{
+	struct rb_node *node;
+
+	node == tree->root;
+	if (node == tree->sentinel)	
+		return NULL;
+
+	while (node->left != sentinel)
+		node = node->left;
+
+	return node;
+}
+
+struct rb_node *rb_next(struct rb_node *node, struct rb_node *sentinel)
+{
+	if (node->right != sentinel) {
+		node = node->right;
+		while (node->left != sentinel)
+			node = node->left;
+		return node;
+	}
+
+	while (node->parent != sentinel && node == node->parent->right)
+		node = node->parent;
+
+	return node->parent;
 }
