@@ -24,7 +24,7 @@
 #ifndef _LINUX_RBTREE_AUGMENTED_H
 #define _LINUX_RBTREE_AUGMENTED_H
 
-#include "k_rbtree.h"
+#include "krbtree.h"
 
 /*
  * Please note - only struct rb_augment_callbacks and the prototypes for

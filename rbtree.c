@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "rbtree.h"
 
 struct rb_node *rb_minimum(struct rb_node *node, struct rb_node *sentinel)
@@ -272,11 +273,11 @@ void rb_delete(struct rb_tree *tree, struct rb_node *node)
 	x->color = RB_BLACK;
 }
 
-struct rb_node *rb_first(struct rb_tree *tree)
+struct rb_node *rb_first(struct rb_tree *tree, struct rb_node *sentinel)
 {
 	struct rb_node *node;
 
-	node == tree->root;
+	node = tree->root;
 	if (node == tree->sentinel)	
 		return NULL;
 
