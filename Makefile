@@ -1,6 +1,9 @@
 
 CFLAGS := -g -Wall -Werror
 
+bins := t_rbtree r_krbtree
+objs := rbtree.o t_rbtree.o krbtree.o t_krbtree.o
+
 all : t_rbtree t_krbtree
 
 t_rbtree : t_rbtree.o rbtree.o
@@ -15,4 +18,4 @@ krbtree.o : krbtree.c krbtree_augmented.h
 t_krbtree.o : t_krbtree.c krbtree.h
 
 clean:
-	@rm -rfv rbtree.o t_rbtree.o t_rbtree
+	@rm -rfv $(bins) $(objs)

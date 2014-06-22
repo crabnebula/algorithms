@@ -1,4 +1,5 @@
 *.o
 *.exe
 t_rbtree
+t_krbtree
 *.sh
